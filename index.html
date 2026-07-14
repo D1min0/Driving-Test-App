@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Drive — WALLYS</title>
+  <link rel="stylesheet" href="mesStyles.css">
+  <style>
+    /* Section label inside main */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9aaabe;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #1e2a38;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+    .section-subtitle {
+      font-size: 0.875rem;
+      color: #556070;
+    }
+    .content-header {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #dde4ee;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="header-brand">
+        <div class="header-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h1>TEST<span>DRIVE</span></h1>
+      </div>
+      <div class="header-badge">WALLYS Automotive</div>
+    </header>
+
+    <nav>
+      <a href="enregistrement.html" target="x" class="active" onclick="setActive(this)">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>
+        </svg>
+        Enregistrement testeur
+      </a>
+      <a href="evaluation.html" target="x" onclick="setActive(this)">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        Évaluation modèle
+      </a>
+      <a href="bilan.php" target="x" onclick="setActive(this)">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        Bilan des évaluations
+      </a>
+    </nav>
+
+    <section>
+      <div class="content-header">
+        <div class="section-label">Portail</div>
+        <div class="section-title">Espace Testeur</div>
+        <div class="section-subtitle">Gérez les inscriptions et les évaluations des modèles WALLYS</div>
+      </div>
+      <iframe src="enregistrement.html" name="x" frameborder="0"></iframe>
+    </section>
+  </div>
+
+  <script>
+    function setActive(el) {
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

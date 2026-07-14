@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Évaluation — Test Drive</title>
+  <link rel="stylesheet" href="mesStyles.css">
+  <script src="controles.js"></script>
+</head>
+<body class="form-body">
+  <form action="evaluation.php" method="post" onsubmit="return verif2()">
+    <fieldset>
+      <legend>Évaluation d'un modèle</legend>
+
+      <div>
+        <label for="np">Numéro de permis</label>
+        <input id="np" name="np" type="text" placeholder="ex: 24/12345">
+      </div>
+
+      <div>
+        <label for="s">Modèle testé</label>
+        <select name="s" id="s">
+          <option value="">Choisir un modèle</option>
+          <option value="15">WALLYS IRIS</option>
+          <option value="26">WALLYS 619</option>
+          <option value="38">WALLYS 216</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Notes attribuées <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#9aaabe;">(1 à 5)</span></label>
+        <div class="notes-row">
+          <div class="note-field">
+            <label for="sec">Sécurité</label>
+            <input id="sec" name="sec" type="text" placeholder="1–5">
+          </div>
+          <div class="note-field">
+            <label for="cond">Conduite</label>
+            <input id="cond" name="cond" type="text" placeholder="1–5">
+          </div>
+          <div class="note-field">
+            <label for="conf">Confort</label>
+            <input id="conf" name="conf" type="text" placeholder="1–5">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="checkbox-row">
+          <input id="c" type="checkbox">
+          <span class="checkbox-label">Je ne suis pas un robot</span>
+        </label>
+      </div>
+
+      <div class="btn-row">
+        <input type="reset" value="Annuler">
+        <input type="submit" value="Soumettre l'évaluation">
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>

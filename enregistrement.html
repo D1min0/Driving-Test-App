@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enregistrement — Test Drive</title>
+  <link rel="stylesheet" href="mesStyles.css">
+  <script src="controles.js"></script>
+</head>
+<body id="b" class="form-body">
+  <form action="enregistrement.php" method="post" onsubmit="return verif1()">
+    <fieldset>
+      <legend>Enregistrement d'un testeur</legend>
+
+      <div>
+        <label for="np">Numéro de permis</label>
+        <input id="np" name="np" type="text" placeholder="ex: 24/12345">
+      </div>
+
+      <div>
+        <label for="n">Nom</label>
+        <input id="n" name="n" type="text" placeholder="Nom de famille">
+      </div>
+
+      <div>
+        <label for="p">Prénom</label>
+        <input id="p" name="p" type="text" placeholder="Prénom">
+      </div>
+
+      <div>
+        <label>Genre</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input id="F" value="F" name="g" type="radio">
+            <span>Féminin</span>
+          </label>
+          <label class="radio-option">
+            <input id="M" value="M" name="g" type="radio">
+            <span>Masculin</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <label for="s">Ville</label>
+        <select name="s" id="s">
+          <option value="">Choisir une ville</option>
+          <option value="1">Gafsa</option>
+          <option value="2">Kef</option>
+          <option value="3">Sousse</option>
+          <option value="4">Tunis</option>
+        </select>
+      </div>
+
+      <div class="btn-row">
+        <input value="Annuler" type="reset">
+        <input value="Ajouter le testeur" type="submit">
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>

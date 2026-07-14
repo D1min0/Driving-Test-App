@@ -1,0 +1,38 @@
+WALLYS TestDrive — corrections apportées
+==========================================
+
+1) bdbac23.sql
+   La table `evaluation` déclarait sa colonne clé sous le nom
+   `evaluation` au lieu de `numPermis`. Résultat : l'import du
+   fichier échouait dès l'INSERT (colonne numPermis inexistante),
+   et les clés/étrangères qui référencent numPermis échouaient
+   aussi. Corrigé : la colonne s'appelle maintenant `numPermis`.
+
+2) index.html
+   Le lien du menu « Bilan des évaluations » pointait vers
+   bilan.html, un fichier qui n'existait pas (page blanche/404).
+   Corrigé : le lien pointe maintenant vers bilan.php.
+
+3) bilan.php (nouveau fichier)
+   Cette page manquait entièrement. Elle affiche maintenant :
+   - la moyenne des notes (sécurité / conduite / confort) par
+     modèle testé,
+   - le détail de chaque évaluation (testeur, modèle, date, notes).
+
+4) Fichiers inutilisés supprimés du dossier livré
+   - controles (1).js : ancienne variante de controles.js, non
+     référencée par aucune page (le formulaire prénom y accepte
+     mal les espaces). controles.js (la version référencée par
+     enregistrement.html et evaluation.html) est la bonne version
+     et a été conservée telle quelle.
+   - reousource.js : brouillon initial, remplacé par controles.js.
+
+Pour lancer le site en local (WampServer / XAMPP / MAMP) :
+   1. Copier tout le dossier dans le répertoire www / htdocs.
+   2. Importer bdbac23.sql dans phpMyAdmin (crée la base bdbac23
+      avec ses 4 tables et ses données de test).
+   3. Ouvrir index.html via http://localhost/... (pas en double-
+      clic direct, sinon les pages .php ne s'exécuteront pas).
+   4. Les identifiants de connexion MySQL utilisés dans
+      enregistrement.php / evaluation.php / bilan.php sont
+      root / (pas de mot de passe) — adapter si besoin.
